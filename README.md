@@ -14,6 +14,7 @@ It helps users **set savings goals, track expenses, and get random money-saving 
 - Uses **DOM methods** (`createElement`, `appendChild`, `querySelector`, etc.)  
 - Includes **event listeners** for form submission and button clicks  
 - Uses **BOM** (`window.onbeforeunload`) to warn if the user leaves the page  
+- Regex validation on description input (`/^[a-zA-Z0-9\s,.!?-]{2,50}$/`)
 
 ---
 
