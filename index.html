@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smarty Budgeting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>💰Smart Budgeting💰</h1>
+
+  <!-- Income & Expense Form -->
+  <div class="card">
+    <h2>Add Expense</h2>
+    <form id="expenseForm">
+      <label for="desc">Description:</label>
+      <input type="text" id="desc" required>
+      <label for="amount">Amount ($):</label>
+      <input type="number" id="amount" required min="1">
+      <button type="submit">Add Expense</button>
+    </form>
+    <ul id="expenseList"></ul>
+    <p><strong>Total Spent:</strong> $<span id="total">0</span></p>
+  </div>
+
+  <!-- Savings Goal -->
+  <div class="card">
+    <h2>Savings Goal</h2>
+    <label for="goal">Enter Savings Goal ($):</label>
+    <input type="number" id="goal" min="1">
+    <button id="checkGoal">Check Progress</button>
+    <p id="goalStatus"></p>
+  </div>
+
+  <!-- Motivation Section -->
+  <div class="card">
+    <h2>💡 Money Tip</h2>
+    <p id="tip">Click the button for a random savings tip!</p>
+    <button id="tipBtn">Get Tip</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
