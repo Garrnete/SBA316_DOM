@@ -18,7 +18,7 @@ const descRegex = /^[a-zA-Z0-9\s,.!?-]{2,50}$/;
 // Add Expense (with regex validation + DocumentFragment + attribute modification)
 expenseForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const desc = document.getElementById("desc").value.trim();
+  const desc = document.getElementById("desc").value.replace(/\n/g, " ").trim();
   const amount = parseFloat(document.getElementById("amount").value);
 
   // ✅ Regex validation check
