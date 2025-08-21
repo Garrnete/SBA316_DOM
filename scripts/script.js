@@ -12,21 +12,46 @@ const tipEl = document.getElementById("tip");
 
 let total = 0;
 
-// Add Expense (with validation + createElement + appendChild)
+// Regex for description validation: letters, numbers, spaces, commas, periods, etc.
+const descRegex = /^[a-zA-Z0-9\s,.!?-]{2,50}$/;
+
+// Add Expense (with regex validation + DocumentFragment + attribute modification)
 expenseForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const desc = document.getElementById("desc").value;
+  const desc = document.getElementById("desc").value.trim();
   const amount = parseFloat(document.getElementById("amount").value);
 
+  // ✅ Regex validation check
+  if (!descRegex.test(desc)) {
+    alert("❌ Invalid description. Use only letters, numbers, spaces, and punctuation (2–50 characters).");
+    return;
+  }
+
+  if (isNaN(amount) || amount <= 0) {
+    alert("❌ Please enter a valid amount greater than 0.");
+    return;
+  }
+
+  // Create list item inside a DocumentFragment
+  const fragment = document.createDocumentFragment();
   const li = document.createElement("li");
   li.textContent = `${desc}: $${amount}`;
-  expenseList.appendChild(li);
+  fragment.appendChild(li);
+  expenseList.appendChild(fragment);
 
+  // Update total
   total += amount;
   totalEl.textContent = total;
 
   // Reset form
   expenseForm.reset();
+
+  // Temporarily disable the button after submit (attribute modification)
+  const submitBtn = expenseForm.querySelector("button");
+  submitBtn.setAttribute("disabled", "true");
+  setTimeout(() => {
+    submitBtn.removeAttribute("disabled");
+  }, 1500);
 });
 
 // Savings Goal Check (modify text + classList)
@@ -46,6 +71,11 @@ checkGoalBtn.addEventListener("click", () => {
   }
 });
 
+// Update progress bar
+const progressBar = document.getElementById("progressBar");
+let progress = Math.min((total / goal) * 100, 100); // cap at 100%
+progressBar.style.width = progress + "%";
+
 // Random Savings Tips (iterate + innerText)
 const tips = [
   "Track every dollar you spend.",
@@ -53,7 +83,7 @@ const tips = [
   "Automate your savings transfers.",
   "Create a list for grocery shopping.",
   "Stock up on household supplies when they’re cheap.",
-  "Cancel unnecessary subscriptions",
+  "Cancel unnecessary subscriptions"
 ];
 
 tipBtn.addEventListener("click", () => {

@@ -21,4 +21,17 @@ It helps users **set savings goals, track expenses, and get random money-saving 
 ## 🛠️ Technologies
 - **HTML5** for structure  
 - **CSS3** for styling  
-- **JavaScript (ES6)** for DOM/BOM manipulation and interactivity  
+- **JavaScript (ES6)** for DOM/BOM manipulation and interactivity 
+
+Reflection
+1. What could you have done differently during the planning stages of your project to make the execution easier?
+If I had created a simple flow chart or wireframe, I would have had a clearer roadmap for which elements needed IDs, which parts would be manipulated with JavaScript, and how the form validation should flow.
+
+2. Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?
+The regex validation was the most challenging because it took extra time to test and refine. In future projects, preparing sample test cases and practicing regex patterns beforehand would make it easier to implement.
+
+3. What would you add to, or change about your application if given more time?
+If given more time, I would add income tracking alongside expenses, include visual charts to show spending trends.
+
+4. Use this space to make notes for your future self about anything that you think is important to remember about this process, or that may aid you when attempting something similar again:
+Plan the structure and required DOM interactions before coding.

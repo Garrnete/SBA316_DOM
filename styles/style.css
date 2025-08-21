@@ -1,60 +1,106 @@
 /* ===== Smart Budgeting – External Stylesheet ===== */
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background: #f9f9f9;
-}
-
-h1 {
-  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #e3fdfd, #ffe6fa);
   color: #2c3e50;
 }
 
+/* Main heading */
+h1 {
+  text-align: center;
+  padding: 20px;
+  background: #27ae60;
+  color: white;
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Card layout for sections */
 .card {
   background: #fff;
   padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px;
 }
 
+/* Section titles */
+.card h2 {
+  margin-top: 0;
+  color: #27ae60;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+/* Labels and inputs */
 label {
   display: block;
-  margin: 8px 0 4px;
+  margin: 10px 0 4px;
+  font-weight: 500;
 }
 
 input {
-  padding: 6px;
+  padding: 10px;
   width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: border 0.3s;
 }
 
+input:focus {
+  border-color: #27ae60;
+  outline: none;
+}
+
+/* Buttons */
 button {
-  margin-top: 10px;
-  padding: 10px;
+  padding: 10px 15px;
   background: #27ae60;
   border: none;
   color: #fff;
-  border-radius: 8px;
+  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 button:hover {
   background: #219150;
 }
 
+/* Expense list */
 ul {
   list-style-type: none;
   padding: 0;
 }
 
 li {
-  padding: 6px;
-  margin: 4px 0;
-  background: #ecf0f1;
+  padding: 8px 12px;
+  margin: 6px 0;
+  background: #f1f8f6;
+  border-left: 4px solid #27ae60;
   border-radius: 6px;
+  font-size: 0.95rem;
 }
 
+/* Highlight warnings */
 .highlight {
   background: #f39c12 !important;
   color: #fff;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* Money tip style */
+#tip {
+  font-style: italic;
+  color: #34495e;
 }
